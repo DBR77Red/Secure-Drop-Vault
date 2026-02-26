@@ -7,6 +7,20 @@ import { storage } from "./storage";
 const app = express();
 const httpServer = createServer(app);
 
+// Trust Replit's reverse proxy so req.protocol reflects the original scheme
+app.set("trust proxy", 1);
+
+// Redirect HTTP to HTTPS and enforce HSTS in production
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === "production") {
+    if (req.protocol === "http") {
+      return res.redirect(301, `https://${req.headers.host}${req.url}`);
+    }
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+  }
+  next();
+});
+
 declare module "http" {
   interface IncomingMessage {
     rawBody: unknown;
