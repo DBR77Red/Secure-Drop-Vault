@@ -4,12 +4,13 @@ import { z } from "zod";
 
 export const messages = pgTable("messages", {
   id: uuid("id").primaryKey().defaultRandom(),
-  content: text("content"), 
-  fileData: text("file_data"), 
+  content: text("content"),
+  fileData: text("file_data"),
   fileName: text("file_name"),
   fileType: text("file_type"),
   type: text("type").notNull(), // 'text', 'url', 'file'
   createdAt: timestamp("created_at").defaultNow(),
+  expiresAt: timestamp("expires_at").notNull(),
 });
 
 export const insertMessageSchema = createInsertSchema(messages).pick({
