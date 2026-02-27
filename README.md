@@ -1,5 +1,7 @@
 # Secure Drop Vault
 
+<img width="1210" height="807" alt="image" src="https://github.com/user-attachments/assets/e8d219f8-18dd-4b56-968f-b74e137ce68a" />
+
 A secure, self-destructing secret sharing platform. Share sensitive text, URLs, and files via a one-time link that is permanently deleted the moment it is opened.
 
 
