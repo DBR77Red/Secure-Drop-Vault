@@ -5,7 +5,9 @@
 
 
 /*
+
 Disclaimer: This project was built as a learning exercise using Replit and Claude Code. It is intended for training and educational purposes only. Use at your own risk — I take no responsibility for any issues, damages, or losses that may arise from using this code in any environment.
+
 */
 
 A secure, self-destructing secret sharing platform. Share sensitive text, URLs, and files via a one-time link that is permanently deleted the moment it is opened.
